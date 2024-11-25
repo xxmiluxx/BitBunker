@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Estudiante</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/inter.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h3>Perfil de Estudiante</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </div>
+        <div class="content grid grid-cols-2">
+            <div>
+                <label class="field-label" for="control-number">Número de Control</label>
+                <input class="field-input" id="control-number" readonly value="{{ matricula }}" />
+            </div>
+            <div>
+                <label class="field-label" for="semester">Semestre Actual</label>
+                <input class="field-input" id="semester" readonly value="{{ semestre }}" />
+            </div>
+            <div>
+                <label class="field-label" for="name">Nombre</label>
+                <input class="field-input" id="name" readonly value="{{ nombre }}" />
+            </div>
+            <div>
+                <label class="field-label" for="paternal-surname">Apellido Paterno</label>
+                <input class="field-input" id="paternal-surname" readonly value="{{ apellidoP }}" />
+            </div>
+            <div>
+                <label class="field-label" for="maternal-surname">Apellido Materno</label>
+                <input class="field-input" id="maternal-surname" readonly value="{{ apellidoM }}" />
+            </div>
+            <div>
+                <label class="field-label" for="credits">Conteo de horas actuales</label>
+                <input class="field-input" id="credits" readonly value="{{ horas }}" />
+            </div>
+            <a href="{% url 'home' %}" class="button button--primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M3 9.5L12 3l9 6.5v11a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-4a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-11z">
+                    </path>
+                </svg>
+                Regresar
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
